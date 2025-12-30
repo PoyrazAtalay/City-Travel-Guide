@@ -1,0 +1,10 @@
+1001,Izmir,Turkey,4.4,seaside;historical;sunny
+1002,Barcelona,Spain,5.6,seaside;historical;architecture
+1003,Stockholm,Sweden,1.6,nordic;cold;islands;historical
+1004,Paris,France,2.2,historical;museum;architecture
+1005,Rome,Italy,2.8,historical;ancient;food;architecture
+1006,Prague,Czech Republic,1.3,historical;river;architecture;old_town
+1007,New York,United States,8.8,skyscrapers;modern;parks
+1008,Tokyo,Japan,9.7,modern;technology;crowded
+1009,Amsterdam,Netherlands,0.9,canals;bike_friendly;historical
+1010,Lisbon,Portugal,0.5,seaside;historical;sunny
