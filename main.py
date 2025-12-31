@@ -2,7 +2,7 @@
 #330201062
 
 
-# Reads the file and returns the cities dictionary
+# Reads the file and returns the cities dictionary.
 def load_cities_from_file(filename):
     cities = {}
     lines = []
@@ -19,11 +19,25 @@ def load_cities_from_file(filename):
         tags = set()
         for b in range(len(lines[a])-4):
             tags.add(lines[a][b+4])
-        cities[lines[a][0]] = {
+        cities[int(lines[a][0])] = {
             "name" : lines[a][1],
             "country" : lines[a][2],
-            "population": lines[a][3],
+            "population": float(lines[a][3]),
             "tags" : tags
         }
 
     return cities
+
+
+# Adds a new city to the dictionary.
+def add_city(cities=dict, city_id=int, name=str, country=str, population=float):
+    if city_id in cities.keys():
+        print("This city already exists.")
+    else:
+        cities[city_id] = {
+            "name" : name,
+            "country" : country,
+            "population" : population,
+            "tags" : set()
+        }
+
