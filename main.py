@@ -51,11 +51,27 @@ def remove_city(cities:dict, city_id:int):
 
 
 # Adds a tag to the given city's tag set.
-def add_tag(cities:dict, city_id:int, tag:set):
+def add_tag(cities:dict, city_id:int, tag:str):
     try:
-        cities[city_id]["tags"] = tag
+        cities[city_id]["tags"].add(tag)
     except:
         print("This city does not exist.")
+
+
+# Removes the given tag from the city’s tag set.
+def remove_tag(cities:dict, city_id:int, tag:str):
+    # Checking the city.
+    try:
+        test = cities[city_id]
+    except:
+        print("This city does not exist.")
+
+    # Real purpose
+    try:
+        cities[city_id]["tags"].remove(tag)
+    except:
+        print("This tag does not exist.")
+
 
 
 
