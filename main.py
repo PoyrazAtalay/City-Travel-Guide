@@ -30,7 +30,7 @@ def load_cities_from_file(filename):
 
 
 # Adds a new city to the dictionary.
-def add_city(cities=dict, city_id=int, name=str, country=str, population=float):
+def add_city(cities:dict, city_id:int, name:str, country:str, population:float):
     if city_id in cities.keys():
         print("This city already exists.")
     else:
@@ -43,10 +43,19 @@ def add_city(cities=dict, city_id=int, name=str, country=str, population=float):
 
 
 # Removes the city with the given id from the dictionary.
-def remove_city(cities=dict, city_id=int):
+def remove_city(cities:dict, city_id:int):
     try:
         del cities[city_id]
     except:
         print("This city does not exist.")
+
+
+# Adds a tag to the given city's tag set.
+def add_tag(cities:dict, city_id:int, tag:set):
+    try:
+        cities[city_id]["tags"] = tag
+    except:
+        print("This city does not exist.")
+
 
 
