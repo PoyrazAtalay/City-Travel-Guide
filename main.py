@@ -2,6 +2,8 @@
 #330201062
 
 
+FILE = "cities.txt"
+
 # Reads the file and returns the cities dictionary.
 def load_cities_from_file(filename):
     cities = {}
@@ -71,6 +73,17 @@ def remove_tag(cities:dict, city_id:int, tag:str):
         cities[city_id]["tags"].remove(tag)
     except:
         print("This tag does not exist.")
+
+
+# Prints the current cities data.
+def print_cities(cities:dict):
+    print(f"{'CityID':^8} | {'Name':^10} | {'Country':^20} | {'Population':^15} | {'Tags'}")
+    print("-" * 100)
+
+    for city_id, info in cities.items():
+        print(f"{city_id:^8} | {info['name']:^10} | {info['country']:^20} | {info['population']:^15} | {info["tags"]}")
+
+
 
 
 
