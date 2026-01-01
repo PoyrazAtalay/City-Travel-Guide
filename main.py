@@ -41,3 +41,12 @@ def add_city(cities=dict, city_id=int, name=str, country=str, population=float):
             "tags" : set()
         }
 
+
+# Removes the city with the given id from the dictionary.
+def remove_city(cities=dict, city_id=int):
+    try:
+        del cities[city_id]
+    except:
+        print("This city does not exist.")
+
+
