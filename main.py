@@ -84,6 +84,26 @@ def print_cities(cities:dict):
         print(f"{city_id:^8} | {info['name']:^10} | {info['country']:^20} | {info['population']:^15} | {info["tags"]}")
 
 
+# Creating a list of city IDs.
+city_ids = list(load_cities_from_file(FILE).keys())
+
+
+# Performs an iterative linear search on a list of city IDs.
+def linear_search_iterative(city_ids, target_id):
+    for i in range(len(city_ids)):
+        if target_id == city_ids[i]:
+            return i
+    return -1
+
+# Performs a recursive linear search on a list of city IDs.
+def linear_search_recursive(city_ids, target_id, index=0):
+    if index == len(city_ids):
+        return -1
+    elif city_ids[index] == target_id:
+        return index
+    return linear_search_recursive(city_ids, target_id, index+1)
+
+
 
 
 
