@@ -104,6 +104,36 @@ def linear_search_recursive(city_ids, target_id, index=0):
     return linear_search_recursive(city_ids, target_id, index+1)
 
 
+# Performs an iterative binary search on a list of city IDs.
+def binary_search_iterative(city_ids, target_id):
+    city_ids = sorted(city_ids)
+    left = 0
+    right = len(city_ids) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if city_ids[mid] == target_id:
+            return mid
+        elif city_ids[mid] < target_id:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+# Performs a recursive binary search on a list of city IDs.
+def binary_search_recursive(city_ids, target_id, left=0, right=len(city_ids)-1):
+    city_ids = sorted(city_ids)
+    if right >= left:
+        mid = (left + right) // 2
+        if city_ids[mid] == target_id:
+            return mid
+        elif city_ids[mid] < target_id:
+            return binary_search_recursive(city_ids, target_id, mid+1, right)
+        else:
+            return binary_search_recursive(city_ids, target_id, left, mid-1)
+    else:
+        return -1
+
+
 
 
 
