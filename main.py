@@ -134,6 +134,31 @@ def binary_search_recursive(city_ids, target_id, left=0, right=len(city_ids)-1):
         return -1
 
 
+# Main function
+def main():
+    cities = load_cities_from_file(FILE)
+    print_cities(cities)
+    print("\nAdding a new city named Istanbul\n")
+    add_city(cities,1011,"Istanbul","Turkey",15.6)
+    print_cities(cities)
+    print("\nRemoving the city with id 1008\n")
+    remove_city(cities,1008)
+    print_cities(cities)
+    print("\nAdding tags to city with id 1011\n")
+    add_tag(cities,1011,'crowded')
+    add_tag(cities,1011,'seaside')
+    print_cities(cities)
+    print("\nRemoving tags from city with id 1001\n")
+    remove_tag(cities,1001,"historical")
+    print_cities(cities)
+    print(f"\nindex of id 1001 is {linear_search_iterative(city_ids,1001)}")
+    print(f"index of id 1002 is {linear_search_recursive(city_ids,1002)}")
+    print(f"index of id 1003 is {binary_search_iterative(city_ids,1003)}")
+    print(f"index of id 1004 is {binary_search_recursive(city_ids,1004)}")
+
+main()
+
+
 
 
 
